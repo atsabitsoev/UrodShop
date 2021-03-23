@@ -9,21 +9,21 @@
 /* Begin PBXBuildFile section */
 		AC51054B260AABED009FD540 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC51054A260AABED009FD540 /* AppDelegate.swift */; };
 		AC51054D260AABED009FD540 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC51054C260AABED009FD540 /* SceneDelegate.swift */; };
-		AC51054F260AABED009FD540 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC51054E260AABED009FD540 /* ViewController.swift */; };
-		AC510552260AABED009FD540 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC510550260AABED009FD540 /* Main.storyboard */; };
 		AC510554260AABED009FD540 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC510553260AABED009FD540 /* Assets.xcassets */; };
 		AC510557260AABED009FD540 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC510555260AABED009FD540 /* LaunchScreen.storyboard */; };
+		AC510566260AAC62009FD540 /* RoundIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC510565260AAC62009FD540 /* RoundIconView.swift */; };
+		AC51056B260AB038009FD540 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC51056A260AB038009FD540 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AC510547260AABED009FD540 /* UrodShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UrodShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC51054A260AABED009FD540 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC51054C260AABED009FD540 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AC51054E260AABED009FD540 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		AC510551260AABED009FD540 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AC510553260AABED009FD540 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC510556260AABED009FD540 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AC510558260AABED009FD540 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC510565260AAC62009FD540 /* RoundIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundIconView.swift; sourceTree = "<group>"; };
+		AC51056A260AB038009FD540 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +56,47 @@
 		AC510549260AABED009FD540 /* UrodShop */ = {
 			isa = PBXGroup;
 			children = (
+				AC510568260AB01B009FD540 /* Modules */,
+				AC510564260AAC36009FD540 /* Views */,
+				AC510560260AAC0E009FD540 /* SupportingFiles */,
+			);
+			path = UrodShop;
+			sourceTree = "<group>";
+		};
+		AC510560260AAC0E009FD540 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
 				AC51054A260AABED009FD540 /* AppDelegate.swift */,
 				AC51054C260AABED009FD540 /* SceneDelegate.swift */,
-				AC51054E260AABED009FD540 /* ViewController.swift */,
-				AC510550260AABED009FD540 /* Main.storyboard */,
 				AC510553260AABED009FD540 /* Assets.xcassets */,
 				AC510555260AABED009FD540 /* LaunchScreen.storyboard */,
 				AC510558260AABED009FD540 /* Info.plist */,
 			);
-			path = UrodShop;
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		AC510564260AAC36009FD540 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AC510565260AAC62009FD540 /* RoundIconView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AC510568260AB01B009FD540 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				AC510569260AB021009FD540 /* Home */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		AC510569260AB021009FD540 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				AC51056A260AB038009FD540 /* HomeViewController.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,7 +158,6 @@
 			files = (
 				AC510557260AABED009FD540 /* LaunchScreen.storyboard in Resources */,
 				AC510554260AABED009FD540 /* Assets.xcassets in Resources */,
-				AC510552260AABED009FD540 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,23 +168,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC51054F260AABED009FD540 /* ViewController.swift in Sources */,
 				AC51054B260AABED009FD540 /* AppDelegate.swift in Sources */,
+				AC510566260AAC62009FD540 /* RoundIconView.swift in Sources */,
 				AC51054D260AABED009FD540 /* SceneDelegate.swift in Sources */,
+				AC51056B260AB038009FD540 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		AC510550260AABED009FD540 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AC510551260AABED009FD540 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		AC510555260AABED009FD540 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -288,7 +312,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 89WB9E7UEU;
-				INFOPLIST_FILE = UrodShop/Info.plist;
+				INFOPLIST_FILE = UrodShop/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,7 +331,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 89WB9E7UEU;
-				INFOPLIST_FILE = UrodShop/Info.plist;
+				INFOPLIST_FILE = UrodShop/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
