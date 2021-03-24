@@ -9,7 +9,7 @@ import UIKit
 
 final class RoundIconView: UIView {
     
-    private var iconImage: UIImage
+    private var iconImage: UIImage?
     
     private let roundView: UIView = {
         let view: UIView = UIView()
@@ -24,7 +24,7 @@ final class RoundIconView: UIView {
     }()
     
     
-    init(iconImage: UIImage) {
+    init(iconImage: UIImage? = nil) {
         self.iconImage = iconImage
         super.init(frame: .zero)
         setupView()
@@ -46,6 +46,12 @@ final class RoundIconView: UIView {
     }
     
     
+    func setImage(_ image: UIImage) {
+        iconImage = image
+        iconImageView.image = image
+    }
+    
+    
     private func setupView() {
         setNeedsUpdateConstraints()
         setupRoundView()
@@ -60,11 +66,6 @@ final class RoundIconView: UIView {
     private func setupIconImageView() {
         iconImageView.image = iconImage
         roundView.addSubview(iconImageView)
-    }
-    
-    private func setImage(_ image: UIImage) {
-        iconImage = image
-        iconImageView.image = image
     }
     
     private func roundViewVisualCorrection() {

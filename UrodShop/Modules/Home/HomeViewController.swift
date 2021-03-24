@@ -9,8 +9,61 @@ import UIKit
 
 final class HomeViewController: UIViewController {
     
-    private let roundIconView: RoundIconView = {
-        let view = RoundIconView(iconImage: UIImage.init())
+    private let roundIconView: RoundItemsCollectionView = {
+        let icon = UIImage.add
+        let view = RoundItemsCollectionView(
+            viewModel: RoundItemsCollectionView.ViewModel(
+                title: "Категории",
+                items: [
+                    RoundItemsCollectionView.ViewModel.Item(
+                        icon: UIImage.add,
+                        description: "Носки"
+                    ),
+                    RoundItemsCollectionView.ViewModel.Item(
+                        icon: UIImage.add,
+                        description: "Футболки"
+                    ),
+                    RoundItemsCollectionView.ViewModel.Item(
+                        icon: UIImage.add,
+                        description: "Носки"
+                    ),
+                    RoundItemsCollectionView.ViewModel.Item(
+                        icon: UIImage.add,
+                        description: "Носки"
+                    ),
+                    RoundItemsCollectionView.ViewModel.Item(
+                        icon: UIImage.add,
+                        description: "Носки"
+                    ),
+                    RoundItemsCollectionView.ViewModel.Item(
+                        icon: UIImage.add,
+                        description: "Носки"
+                    ),
+                    RoundItemsCollectionView.ViewModel.Item(
+                        icon: UIImage.add,
+                        description: "Носки"
+                    ),RoundItemsCollectionView.ViewModel.Item(
+                        icon: UIImage.add,
+                        description: "Носки"
+                    ),RoundItemsCollectionView.ViewModel.Item(
+                        icon: UIImage.add,
+                        description: "Носки"
+                    ),
+                    RoundItemsCollectionView.ViewModel.Item(
+                        icon: UIImage.add,
+                        description: "Носки"
+                    ),
+                    RoundItemsCollectionView.ViewModel.Item(
+                        icon: UIImage.add,
+                        description: "Носки"
+                    ),
+                    RoundItemsCollectionView.ViewModel.Item(
+                        icon: UIImage.add,
+                        description: "Носки"
+                    )
+                ]
+            )
+        )
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -39,9 +92,9 @@ extension HomeViewController {
     private func setRoundIconViewConstraints() {
         NSLayoutConstraint.activate([
             roundIconView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            roundIconView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            roundIconView.heightAnchor.constraint(equalToConstant: 60),
-            roundIconView.widthAnchor.constraint(equalToConstant: 60)
+            roundIconView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            roundIconView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            roundIconView.heightAnchor.constraint(equalToConstant: 140)
         ])
     }
 }

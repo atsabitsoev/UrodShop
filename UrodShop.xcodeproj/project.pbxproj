@@ -13,6 +13,9 @@
 		AC510557260AABED009FD540 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC510555260AABED009FD540 /* LaunchScreen.storyboard */; };
 		AC510566260AAC62009FD540 /* RoundIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC510565260AAC62009FD540 /* RoundIconView.swift */; };
 		AC51056B260AB038009FD540 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC51056A260AB038009FD540 /* HomeViewController.swift */; };
+		AC9F417B260BE0D600EB8427 /* RoundItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9F417A260BE0D600EB8427 /* RoundItemCell.swift */; };
+		AC9F417F260BE68600EB8427 /* RoundItemsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9F417E260BE68600EB8427 /* RoundItemsCollectionView.swift */; };
+		ACD01F5C260BD899009A17CE /* RoundItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD01F5B260BD899009A17CE /* RoundItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		AC510558260AABED009FD540 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC510565260AAC62009FD540 /* RoundIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundIconView.swift; sourceTree = "<group>"; };
 		AC51056A260AB038009FD540 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		AC9F417A260BE0D600EB8427 /* RoundItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundItemCell.swift; sourceTree = "<group>"; };
+		AC9F417E260BE68600EB8427 /* RoundItemsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundItemsCollectionView.swift; sourceTree = "<group>"; };
+		ACD01F5B260BD899009A17CE /* RoundItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				AC510568260AB01B009FD540 /* Modules */,
-				AC510564260AAC36009FD540 /* Views */,
+				AC510564260AAC36009FD540 /* Views+Cells */,
 				AC510560260AAC0E009FD540 /* SupportingFiles */,
 			);
 			path = UrodShop;
@@ -75,12 +81,13 @@
 			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
-		AC510564260AAC36009FD540 /* Views */ = {
+		AC510564260AAC36009FD540 /* Views+Cells */ = {
 			isa = PBXGroup;
 			children = (
-				AC510565260AAC62009FD540 /* RoundIconView.swift */,
+				AC9F417D260BE5C400EB8427 /* CollectionViews */,
+				AC9F4179260BE0BD00EB8427 /* RoundItem */,
 			);
-			path = Views;
+			path = "Views+Cells";
 			sourceTree = "<group>";
 		};
 		AC510568260AB01B009FD540 /* Modules */ = {
@@ -97,6 +104,24 @@
 				AC51056A260AB038009FD540 /* HomeViewController.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		AC9F4179260BE0BD00EB8427 /* RoundItem */ = {
+			isa = PBXGroup;
+			children = (
+				AC510565260AAC62009FD540 /* RoundIconView.swift */,
+				ACD01F5B260BD899009A17CE /* RoundItemView.swift */,
+				AC9F417A260BE0D600EB8427 /* RoundItemCell.swift */,
+			);
+			path = RoundItem;
+			sourceTree = "<group>";
+		};
+		AC9F417D260BE5C400EB8427 /* CollectionViews */ = {
+			isa = PBXGroup;
+			children = (
+				AC9F417E260BE68600EB8427 /* RoundItemsCollectionView.swift */,
+			);
+			path = CollectionViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,7 +194,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC51054B260AABED009FD540 /* AppDelegate.swift in Sources */,
+				ACD01F5C260BD899009A17CE /* RoundItemView.swift in Sources */,
 				AC510566260AAC62009FD540 /* RoundIconView.swift in Sources */,
+				AC9F417F260BE68600EB8427 /* RoundItemsCollectionView.swift in Sources */,
+				AC9F417B260BE0D600EB8427 /* RoundItemCell.swift in Sources */,
 				AC51054D260AABED009FD540 /* SceneDelegate.swift in Sources */,
 				AC51056B260AB038009FD540 /* HomeViewController.swift in Sources */,
 			);
