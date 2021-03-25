@@ -26,7 +26,7 @@ final class RoundItemsCollectionView: UIView {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.font = UIFont.boldSystemFont(ofSize: 18)
         return label
     }()
     private let collectionView: UICollectionView = {
@@ -42,7 +42,7 @@ final class RoundItemsCollectionView: UIView {
         let stack = UIStackView()
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .vertical
-        stack.spacing = 16
+        stack.spacing = 12
         stack.alignment = .fill
         return stack
     }()
@@ -128,7 +128,7 @@ extension RoundItemsCollectionView: UICollectionViewDelegate, UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let height = collectionView.bounds.height
-        let width = height / 5 * 3
+        let width = height / 10 * 7
         return CGSize(width: width, height: height)
     }
 }

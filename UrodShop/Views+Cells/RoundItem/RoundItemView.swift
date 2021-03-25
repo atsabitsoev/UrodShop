@@ -84,7 +84,7 @@ extension RoundItemView {
     private func setIconViewConstraints() {
         NSLayoutConstraint.activate([
             iconView.heightAnchor.constraint(equalTo: iconView.widthAnchor),
-            iconView.widthAnchor.constraint(equalToConstant: 60)
+            iconView.widthAnchor.constraint(equalToConstant: 56)
         ])
     }
     
