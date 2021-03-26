@@ -20,12 +20,13 @@ final class RoundItemView: UIView {
     private let iconView: RoundIconView = {
         let view = RoundIconView()
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.setContentCompressionResistancePriority(.defaultHigh, for: .vertical)
         return view
     }()
     private let descriptionLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
-        label.numberOfLines = 0
+        label.adjustsFontSizeToFitWidth = true
         label.font = UIFont.boldSystemFont(ofSize: 12)
         label.textColor = UIColor(white: 0.1, alpha: 1)
         return label
@@ -84,7 +85,7 @@ extension RoundItemView {
     private func setIconViewConstraints() {
         NSLayoutConstraint.activate([
             iconView.heightAnchor.constraint(equalTo: iconView.widthAnchor),
-            iconView.widthAnchor.constraint(equalToConstant: 56)
+            iconView.widthAnchor.constraint(equalTo: verticalStack.widthAnchor)
         ])
     }
     

@@ -1,39 +1,26 @@
 //
-//  RoundItemCell.swift
+//  ProductItemCell.swift
 //  UrodShop
 //
-//  Created by Ацамаз Бицоев on 25.03.2021.
+//  Created by Ацамаз Бицоев on 26.03.2021.
 //
 
 import UIKit
 
-final class RoundItemCell: UICollectionViewCell {
+final class ProductItemCell: UICollectionViewCell {
     
-    struct CellModel {
-        let icon: UIImage
-        let description: String
-    }
+    static let identifier: String = "ProductItemCell"
     
-        
-    static let identifier: String = "RoundItemCell"
+    private var cellModel: ProductItemCellModel? = nil
     
-    private var cellModel: CellModel? = nil
-    
-    private lazy var itemView: RoundItemView = { [unowned self] in
-        guard let cellModel = self.cellModel else {
-            let emptyView = RoundItemView(
-                viewModel: RoundItemView.ViewModel(
-                    icon: UIImage.remove,
-                    description: "Пусто"
-                )
-            )
-            emptyView.translatesAutoresizingMaskIntoConstraints = false
-            return emptyView
-        }
-        let view = RoundItemView(
-            viewModel: RoundItemView.ViewModel(
-                icon: cellModel.icon,
-                description: cellModel.description
+    private lazy var itemView: UIView = { [unowned self] in
+        guard let cellModel = self.cellModel else { return UIView() }
+        let view = ProductItemView(
+            viewModel: ProductItemView.ViewModel(
+                title: cellModel.title,
+                subTitle: cellModel.subTitle,
+                accentText: cellModel.accentText,
+                image: cellModel.image
             )
         )
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -55,7 +42,7 @@ final class RoundItemCell: UICollectionViewCell {
     }
     
     
-    func configureCell(withModel model: CellModel) {
+    func configureCell(withModel model: ProductItemCellModel) {
         self.cellModel = model
         setupCell()
     }
@@ -67,7 +54,7 @@ final class RoundItemCell: UICollectionViewCell {
 }
 
 
-extension RoundItemCell {
+extension ProductItemCell {
     private func setItemViewConstraints() {
         NSLayoutConstraint.activate([
             itemView.topAnchor.constraint(equalTo: contentView.topAnchor),

@@ -9,16 +9,8 @@ import UIKit
 
 final class HomeViewController: UIViewController {
     
-    private let roundIconView: ProductItemView = {
-        let icon = UIImage.add
-        let view = ProductItemView(
-            viewModel: ProductItemView.ViewModel(
-                title: "Уродец Геннадий",
-                subTitle: "Футболка",
-                accentText: "990 рублей",
-                image: UIImage.checkmark
-            )
-        )
+    private let roundIconView: UIView = {
+        let view = HomeCollectionView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -46,10 +38,10 @@ final class HomeViewController: UIViewController {
 extension HomeViewController {
     private func setRoundIconViewConstraints() {
         NSLayoutConstraint.activate([
-            roundIconView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            roundIconView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            roundIconView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            roundIconView.heightAnchor.constraint(equalToConstant: 327)
+            roundIconView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            roundIconView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            roundIconView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            roundIconView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
     }
 }

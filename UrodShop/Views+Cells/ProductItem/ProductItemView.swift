@@ -110,7 +110,7 @@ final class ProductItemView: UIView {
 extension ProductItemView {
     private func setImageViewConstraints() {
         NSLayoutConstraint.activate([
-            imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor, multiplier: 1.5),
+            imageView.widthAnchor.constraint(equalTo: verticalStack.widthAnchor),
             imageView.heightAnchor.constraint(equalTo: heightAnchor, constant: -77)
         ])
     }
