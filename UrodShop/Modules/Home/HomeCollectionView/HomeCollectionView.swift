@@ -111,6 +111,8 @@ final class HomeCollectionView: UIView {
         collectionView.register(ProductItemCell.self, forCellWithReuseIdentifier: ProductItemCell.identifier)
         collectionView.register(SectionHeaderReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SectionHeaderReusableView.reuseIdentifier)
         collectionView.backgroundColor = UIColor.white
+        collectionView.delaysContentTouches = false
+        collectionView.showsVerticalScrollIndicator = false
         return collectionView
     }()
     
@@ -185,12 +187,18 @@ final class HomeCollectionView: UIView {
             guard kind == UICollectionView.elementKindSectionHeader else {
                 return nil
               }
-            let view = collectionView.dequeueReusableSupplementaryView(
-                ofKind: kind,
-                withReuseIdentifier: SectionHeaderReusableView.reuseIdentifier,
-                for: indexPath) as? SectionHeaderReusableView
-            let section = self.dataSource?.snapshot().sectionIdentifiers[indexPath.section]
-            view?.titleLabel.text = section?.title
+            guard let view = collectionView.dequeueReusableSupplementaryView(
+                    ofKind: kind,
+                    withReuseIdentifier: SectionHeaderReusableView.reuseIdentifier,
+                    for: indexPath
+            ) as? SectionHeaderReusableView else { return nil }
+            guard let section = self.dataSource?.snapshot().sectionIdentifiers[indexPath.section] else { return nil }
+            view.setTitle(section.title)
+            if indexPath.section == 1 {
+                view.setButton(text: "Посмотреть все") {
+                    print("Тут идет переход на все популярные товары")
+                }
+            }
             return view
         }
     }
