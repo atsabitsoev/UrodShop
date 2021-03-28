@@ -58,7 +58,7 @@ final class HomeViewController: UIViewController {
 extension HomeViewController {
     private func setTopHorizontalStackConstraints() {
         NSLayoutConstraint.activate([
-            topHorizontalStack.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            topHorizontalStack.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 4),
             topHorizontalStack.heightAnchor.constraint(equalToConstant: 44),
             topHorizontalStack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             topHorizontalStack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
