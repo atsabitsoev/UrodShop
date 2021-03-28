@@ -90,10 +90,10 @@ extension RoundIconView {
     
     private func setIconImageViewConstraints() {
         NSLayoutConstraint.activate([
-            iconImageView.topAnchor.constraint(equalTo: roundView.topAnchor, constant: 4),
-            iconImageView.bottomAnchor.constraint(equalTo: roundView.bottomAnchor, constant: -4),
-            iconImageView.leadingAnchor.constraint(equalTo: roundView.leadingAnchor, constant: 4),
-            iconImageView.trailingAnchor.constraint(equalTo: roundView.trailingAnchor, constant: -4)
+            iconImageView.topAnchor.constraint(equalTo: roundView.topAnchor, constant: 12),
+            iconImageView.bottomAnchor.constraint(equalTo: roundView.bottomAnchor, constant: -12),
+            iconImageView.leadingAnchor.constraint(equalTo: roundView.leadingAnchor, constant: 12),
+            iconImageView.trailingAnchor.constraint(equalTo: roundView.trailingAnchor, constant: -12)
         ])
     }
 }

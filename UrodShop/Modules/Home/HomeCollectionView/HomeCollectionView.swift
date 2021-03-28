@@ -16,13 +16,13 @@ final class HomeCollectionView: UIView {
             type: .categories,
             title: "Категории",
             items: [
-                HomeItem.category(RoundItemCellModel(icon: UIImage.add, description: "Футболки")),
-                HomeItem.category(RoundItemCellModel(icon: UIImage.add, description: "Носки")),
-                HomeItem.category(RoundItemCellModel(icon: UIImage.add, description: "Футболки")),
-                HomeItem.category(RoundItemCellModel(icon: UIImage.add, description: "Футболки")),
-                HomeItem.category(RoundItemCellModel(icon: UIImage.add, description: "Футболки")),
-                HomeItem.category(RoundItemCellModel(icon: UIImage.add, description: "Футболки")),
-                HomeItem.category(RoundItemCellModel(icon: UIImage.add, description: "Футболки"))
+                HomeItem.category(RoundItemCellModel(icon: UIImage(named: "skeakers")!, description: "Футболки")),
+                HomeItem.category(RoundItemCellModel(icon: UIImage(named: "skeakers")!, description: "Носки")),
+                HomeItem.category(RoundItemCellModel(icon: UIImage(named: "skeakers")!, description: "Футболки")),
+                HomeItem.category(RoundItemCellModel(icon: UIImage(named: "skeakers")!, description: "Футболки")),
+                HomeItem.category(RoundItemCellModel(icon: UIImage(named: "skeakers")!, description: "Футболки")),
+                HomeItem.category(RoundItemCellModel(icon: UIImage(named: "skeakers")!, description: "Футболки")),
+                HomeItem.category(RoundItemCellModel(icon: UIImage(named: "skeakers")!, description: "Футболки"))
             ]
         ),
         HomeSection(
@@ -34,7 +34,7 @@ final class HomeCollectionView: UIView {
                         title: "Уродец Гена",
                         subTitle: "Носки",
                         accentText: "990₽",
-                        image: UIImage.add
+                        image: UIImage(named: "man")!
                     )
                 ),
                 HomeItem.product(
@@ -42,14 +42,14 @@ final class HomeCollectionView: UIView {
                         title: "Уродец Гена",
                         subTitle: "Носки",
                         accentText: "990₽",
-                        image: UIImage.add
+                        image: UIImage(named: "man")!
                     )
                 ),HomeItem.product(
                     ProductItemCellModel(
                         title: "Уродец Гена",
                         subTitle: "Носки",
                         accentText: "990₽",
-                        image: UIImage.add
+                        image: UIImage(named: "man")!
                     )
                 ),
                 HomeItem.product(
@@ -57,7 +57,7 @@ final class HomeCollectionView: UIView {
                         title: "Уродец Гена",
                         subTitle: "Носки",
                         accentText: "990₽",
-                        image: UIImage.add
+                        image: UIImage(named: "man")!
                     )
                 ),
                 HomeItem.product(
@@ -65,7 +65,7 @@ final class HomeCollectionView: UIView {
                         title: "Уродец Гена",
                         subTitle: "Носки",
                         accentText: "990₽",
-                        image: UIImage.add
+                        image: UIImage(named: "man")!
                     )
                 ),
                 HomeItem.product(
@@ -73,7 +73,7 @@ final class HomeCollectionView: UIView {
                         title: "Уродец Гена",
                         subTitle: "Носки",
                         accentText: "990₽",
-                        image: UIImage.add
+                        image: UIImage(named: "man")!
                     )
                 ),
                 HomeItem.product(
@@ -81,7 +81,7 @@ final class HomeCollectionView: UIView {
                         title: "Уродец Гена",
                         subTitle: "Носки",
                         accentText: "990₽",
-                        image: UIImage.add
+                        image: UIImage(named: "man")!
                     )
                 ),
                 HomeItem.product(
@@ -89,7 +89,7 @@ final class HomeCollectionView: UIView {
                         title: "Уродец Гена",
                         subTitle: "Носки",
                         accentText: "990₽",
-                        image: UIImage.add
+                        image: UIImage(named: "man")!
                     )
                 ),
                 HomeItem.product(
@@ -97,7 +97,7 @@ final class HomeCollectionView: UIView {
                         title: "Уродец Гена",
                         subTitle: "Носки",
                         accentText: "990₽",
-                        image: UIImage.add
+                        image: UIImage(named: "man")!
                     )
                 )
             ]
@@ -113,6 +113,7 @@ final class HomeCollectionView: UIView {
         collectionView.backgroundColor = UIColor.white
         collectionView.delaysContentTouches = false
         collectionView.showsVerticalScrollIndicator = false
+        collectionView.contentInset = UIEdgeInsets(top: 16, left: 0, bottom: 0, right: 0)
         return collectionView
     }()
     

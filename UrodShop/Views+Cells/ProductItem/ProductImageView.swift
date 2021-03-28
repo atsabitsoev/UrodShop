@@ -18,6 +18,6 @@ final class ProductImageView: UIImageView {
     private func setupView() {
         layer.cornerRadius = 4
         layer.masksToBounds = true
-        contentMode = .scaleAspectFit
+        contentMode = .scaleAspectFill
     }
 }

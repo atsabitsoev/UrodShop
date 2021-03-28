@@ -19,6 +19,9 @@
 		AC6D15AD260E13B200052E18 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6D15AC260E13B200052E18 /* SectionHeaderView.swift */; };
 		AC9F417B260BE0D600EB8427 /* RoundItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9F417A260BE0D600EB8427 /* RoundItemCell.swift */; };
 		AC9F417F260BE68600EB8427 /* RoundItemsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9F417E260BE68600EB8427 /* RoundItemsCollectionView.swift */; };
+		ACB71E1B2610983700B8D0D0 /* ABTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB71E1A2610983700B8D0D0 /* ABTabBarController.swift */; };
+		ACB71E1F26109C9F00B8D0D0 /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB71E1E26109C9F00B8D0D0 /* SearchTextField.swift */; };
+		ACB71E232610A6A800B8D0D0 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB71E222610A6A800B8D0D0 /* RoundedButton.swift */; };
 		ACC6EC6B260DD67600174E06 /* ProductItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC6EC6A260DD67600174E06 /* ProductItemCell.swift */; };
 		ACC6EC6E260DD9A800174E06 /* ProductItemsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC6EC6D260DD9A800174E06 /* ProductItemsCollectionView.swift */; };
 		ACC6EC71260DE3F600174E06 /* HomeCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC6EC70260DE3F600174E06 /* HomeCollectionView.swift */; };
@@ -45,6 +48,9 @@
 		AC6D15AC260E13B200052E18 /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 		AC9F417A260BE0D600EB8427 /* RoundItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundItemCell.swift; sourceTree = "<group>"; };
 		AC9F417E260BE68600EB8427 /* RoundItemsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundItemsCollectionView.swift; sourceTree = "<group>"; };
+		ACB71E1A2610983700B8D0D0 /* ABTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABTabBarController.swift; sourceTree = "<group>"; };
+		ACB71E1E26109C9F00B8D0D0 /* SearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
+		ACB71E222610A6A800B8D0D0 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		ACC6EC6A260DD67600174E06 /* ProductItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductItemCell.swift; sourceTree = "<group>"; };
 		ACC6EC6D260DD9A800174E06 /* ProductItemsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductItemsCollectionView.swift; sourceTree = "<group>"; };
 		ACC6EC70260DE3F600174E06 /* HomeCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionView.swift; sourceTree = "<group>"; };
@@ -109,10 +115,12 @@
 		AC510564260AAC36009FD540 /* Views+Cells */ = {
 			isa = PBXGroup;
 			children = (
+				ACB71E1E26109C9F00B8D0D0 /* SearchTextField.swift */,
+				AC6D15AC260E13B200052E18 /* SectionHeaderView.swift */,
 				AC9F417D260BE5C400EB8427 /* CollectionViews */,
 				AC9F4179260BE0BD00EB8427 /* RoundItem */,
 				AC61D30A260C7DD8001F2B48 /* ProductItem */,
-				ACD05C47260F4D89007CAEB2 /* SectionHeaderView */,
+				ACD05C47260F4D89007CAEB2 /* Buttons */,
 			);
 			path = "Views+Cells";
 			sourceTree = "<group>";
@@ -120,6 +128,7 @@
 		AC510568260AB01B009FD540 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				ACB71E1A2610983700B8D0D0 /* ABTabBarController.swift */,
 				AC510569260AB021009FD540 /* Home */,
 			);
 			path = Modules;
@@ -199,13 +208,13 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		ACD05C47260F4D89007CAEB2 /* SectionHeaderView */ = {
+		ACD05C47260F4D89007CAEB2 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
-				AC6D15AC260E13B200052E18 /* SectionHeaderView.swift */,
 				ACD05C49260F4DAC007CAEB2 /* HeaderButton.swift */,
+				ACB71E222610A6A800B8D0D0 /* RoundedButton.swift */,
 			);
-			path = SectionHeaderView;
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,6 +288,7 @@
 			files = (
 				AC61D310260C7E7C001F2B48 /* ProductItemView.swift in Sources */,
 				ACC6EC78260DEA2600174E06 /* HomeItem.swift in Sources */,
+				ACB71E1B2610983700B8D0D0 /* ABTabBarController.swift in Sources */,
 				ACC6EC75260DEA0900174E06 /* HomeSection.swift in Sources */,
 				AC61D30C260C7E11001F2B48 /* ProductImageView.swift in Sources */,
 				AC51054B260AABED009FD540 /* AppDelegate.swift in Sources */,
@@ -287,11 +297,13 @@
 				AC510566260AAC62009FD540 /* RoundIconView.swift in Sources */,
 				AC9F417F260BE68600EB8427 /* RoundItemsCollectionView.swift in Sources */,
 				ACC6EC6E260DD9A800174E06 /* ProductItemsCollectionView.swift in Sources */,
+				ACB71E1F26109C9F00B8D0D0 /* SearchTextField.swift in Sources */,
 				AC6D15AD260E13B200052E18 /* SectionHeaderView.swift in Sources */,
 				AC9F417B260BE0D600EB8427 /* RoundItemCell.swift in Sources */,
 				ACC6EC6B260DD67600174E06 /* ProductItemCell.swift in Sources */,
 				AC51054D260AABED009FD540 /* SceneDelegate.swift in Sources */,
 				ACC6EC80260DEB3600174E06 /* RoundItemCellModel.swift in Sources */,
+				ACB71E232610A6A800B8D0D0 /* RoundedButton.swift in Sources */,
 				AC61D314260C895B001F2B48 /* UIColorEx.swift in Sources */,
 				AC51056B260AB038009FD540 /* HomeViewController.swift in Sources */,
 				ACC6EC71260DE3F600174E06 /* HomeCollectionView.swift in Sources */,
@@ -437,6 +449,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 89WB9E7UEU;
 				INFOPLIST_FILE = UrodShop/SupportingFiles/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -444,7 +457,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.bitsoev.UrodShop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -456,6 +469,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 89WB9E7UEU;
 				INFOPLIST_FILE = UrodShop/SupportingFiles/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -463,7 +477,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.bitsoev.UrodShop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

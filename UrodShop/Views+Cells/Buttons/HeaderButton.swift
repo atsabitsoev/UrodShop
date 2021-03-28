@@ -47,7 +47,7 @@ extension HeaderButton {
     override var isHighlighted: Bool {
         didSet {
             if isHighlighted {
-                alpha = 0.5
+                alpha = 0.3
             } else {
                 UIView.animate(withDuration: 0.3) {
                     self.alpha = 1

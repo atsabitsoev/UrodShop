@@ -9,7 +9,23 @@ import UIKit
 
 final class HomeViewController: UIViewController {
     
-    private let roundIconView: UIView = {
+    private let searchTextField: UIView = {
+        let textField = SearchTextField()
+        return textField
+    }()
+    private let addButton: UIView = {
+        let photoImage = UIImage(named: "photo")!
+        let button = RoundedButton(image: photoImage)
+        return button
+    }()
+    private let topHorizontalStack: UIStackView = {
+        let stack = UIStackView()
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.axis = .horizontal
+        stack.spacing = 16
+        return stack
+    }()
+    private let collectionView: UIView = {
         let view = HomeCollectionView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -22,7 +38,8 @@ final class HomeViewController: UIViewController {
     }
     
     override func updateViewConstraints() {
-        setRoundIconViewConstraints()
+        setTopHorizontalStackConstraints()
+        setCollectionViewConstraints()
         super.updateViewConstraints()
     }
     
@@ -30,18 +47,30 @@ final class HomeViewController: UIViewController {
     private func setupView() {
         view.setNeedsUpdateConstraints()
         view.backgroundColor = UIColor.white
-        view.addSubview(roundIconView)
+        view.addSubview(collectionView)
+        view.addSubview(topHorizontalStack)
+        topHorizontalStack.addArrangedSubview(searchTextField)
+        topHorizontalStack.addArrangedSubview(addButton)
     }
     
 }
 
 extension HomeViewController {
-    private func setRoundIconViewConstraints() {
+    private func setTopHorizontalStackConstraints() {
         NSLayoutConstraint.activate([
-            roundIconView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            roundIconView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            roundIconView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            roundIconView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            topHorizontalStack.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            topHorizontalStack.heightAnchor.constraint(equalToConstant: 44),
+            topHorizontalStack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            topHorizontalStack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
+        ])
+    }
+    
+    private func setCollectionViewConstraints() {
+        NSLayoutConstraint.activate([
+            collectionView.topAnchor.constraint(equalTo: topHorizontalStack.bottomAnchor, constant: 8),
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
     }
 }
