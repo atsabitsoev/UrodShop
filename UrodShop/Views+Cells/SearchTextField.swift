@@ -9,7 +9,7 @@ import UIKit
 
 final class SearchTextField: UITextField {
     
-    private var textPadding = UIEdgeInsets(top: 0, left: 48, bottom: 0, right: 8)
+    private var textPadding = UIEdgeInsets(top: 0, left: 54, bottom: 0, right: 8)
     
     
     override func didMoveToSuperview() {
@@ -34,6 +34,11 @@ final class SearchTextField: UITextField {
         return bounds.inset(by: textPadding)
     }
     
+    override func clearButtonRect(forBounds bounds: CGRect) -> CGRect {
+        let padding = UIEdgeInsets(top: 0, left: -10, bottom: 0, right: 10)
+        return super.clearButtonRect(forBounds: bounds).inset(by: padding)
+    }
+    
     override func leftViewRect(forBounds bounds: CGRect) -> CGRect {
         return bounds.inset(
             by: UIEdgeInsets(
@@ -48,6 +53,8 @@ final class SearchTextField: UITextField {
     
     private func setupTextField() {
         delegate = self
+        placeholder = "Поиск"
+        clearButtonMode = .whileEditing
         setupLeftView()
         backgroundColor = UIColor.secondarySystemBackground
     }
@@ -56,7 +63,7 @@ final class SearchTextField: UITextField {
         let searchImage = UIImage(systemName: "magnifyingglass")?
             .withRenderingMode(.alwaysTemplate)
         let searchImageView = UIImageView(image: searchImage)
-        searchImageView.tintColor = UIColor(white: 0.1, alpha: 1)
+        searchImageView.tintColor = UIColor(white: 0.2, alpha: 1)
         leftView = searchImageView
         leftViewMode = UITextField.ViewMode.always
     }
@@ -69,18 +76,6 @@ final class SearchTextField: UITextField {
 
 
 extension SearchTextField: UITextFieldDelegate {
-    
-    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        leftViewMode = .never
-        textPadding = UIEdgeInsets(top: textPadding.top, left: 16, bottom: textPadding.bottom, right: textPadding.right)
-        return true
-    }
-    
-    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        leftViewMode = .always
-        textPadding = UIEdgeInsets(top: textPadding.top, left: 48, bottom: textPadding.bottom, right: textPadding.right)
-        return true
-    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
