@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC0C272A26262C5600A80B06 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0C272926262C5600A80B06 /* HomeView.swift */; };
+		AC0C272D26262CC200A80B06 /* HomeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0C272C26262CC200A80B06 /* HomeProtocols.swift */; };
+		AC5026FA26263739001651B3 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5026F926263739001651B3 /* HomeRouter.swift */; };
+		AC5026FD262638AE001651B3 /* ABNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5026FC262638AE001651B3 /* ABNavigationController.swift */; };
 		AC51054B260AABED009FD540 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC51054A260AABED009FD540 /* AppDelegate.swift */; };
 		AC51054D260AABED009FD540 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC51054C260AABED009FD540 /* SceneDelegate.swift */; };
 		AC510554260AABED009FD540 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC510553260AABED009FD540 /* Assets.xcassets */; };
 		AC510557260AABED009FD540 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC510555260AABED009FD540 /* LaunchScreen.storyboard */; };
 		AC510566260AAC62009FD540 /* RoundIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC510565260AAC62009FD540 /* RoundIconView.swift */; };
-		AC51056B260AB038009FD540 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC51056A260AB038009FD540 /* HomeViewController.swift */; };
+		AC51056B260AB038009FD540 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC51056A260AB038009FD540 /* HomePresenter.swift */; };
 		AC61D30C260C7E11001F2B48 /* ProductImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC61D30B260C7E11001F2B48 /* ProductImageView.swift */; };
 		AC61D310260C7E7C001F2B48 /* ProductItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC61D30F260C7E7C001F2B48 /* ProductItemView.swift */; };
 		AC61D314260C895B001F2B48 /* UIColorEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC61D313260C895B001F2B48 /* UIColorEx.swift */; };
@@ -34,6 +38,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AC0C272926262C5600A80B06 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		AC0C272C26262CC200A80B06 /* HomeProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProtocols.swift; sourceTree = "<group>"; };
+		AC5026F926263739001651B3 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		AC5026FC262638AE001651B3 /* ABNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABNavigationController.swift; sourceTree = "<group>"; };
 		AC510547260AABED009FD540 /* UrodShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UrodShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC51054A260AABED009FD540 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC51054C260AABED009FD540 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,7 +49,7 @@
 		AC510556260AABED009FD540 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AC510558260AABED009FD540 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC510565260AAC62009FD540 /* RoundIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundIconView.swift; sourceTree = "<group>"; };
-		AC51056A260AB038009FD540 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		AC51056A260AB038009FD540 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		AC61D30B260C7E11001F2B48 /* ProductImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImageView.swift; sourceTree = "<group>"; };
 		AC61D30F260C7E7C001F2B48 /* ProductItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductItemView.swift; sourceTree = "<group>"; };
 		AC61D313260C895B001F2B48 /* UIColorEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorEx.swift; sourceTree = "<group>"; };
@@ -129,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				ACB71E1A2610983700B8D0D0 /* ABTabBarController.swift */,
+				AC5026FC262638AE001651B3 /* ABNavigationController.swift */,
 				AC510569260AB021009FD540 /* Home */,
 			);
 			path = Modules;
@@ -137,7 +146,10 @@
 		AC510569260AB021009FD540 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				AC51056A260AB038009FD540 /* HomeViewController.swift */,
+				AC51056A260AB038009FD540 /* HomePresenter.swift */,
+				AC0C272926262C5600A80B06 /* HomeView.swift */,
+				AC5026F926263739001651B3 /* HomeRouter.swift */,
+				AC0C272C26262CC200A80B06 /* HomeProtocols.swift */,
 				ACC6EC73260DE9E100174E06 /* HomeCollectionView */,
 			);
 			path = Home;
@@ -288,8 +300,10 @@
 			files = (
 				AC61D310260C7E7C001F2B48 /* ProductItemView.swift in Sources */,
 				ACC6EC78260DEA2600174E06 /* HomeItem.swift in Sources */,
+				AC5026FD262638AE001651B3 /* ABNavigationController.swift in Sources */,
 				ACB71E1B2610983700B8D0D0 /* ABTabBarController.swift in Sources */,
 				ACC6EC75260DEA0900174E06 /* HomeSection.swift in Sources */,
+				AC0C272D26262CC200A80B06 /* HomeProtocols.swift in Sources */,
 				AC61D30C260C7E11001F2B48 /* ProductImageView.swift in Sources */,
 				AC51054B260AABED009FD540 /* AppDelegate.swift in Sources */,
 				ACD01F5C260BD899009A17CE /* RoundItemView.swift in Sources */,
@@ -299,14 +313,16 @@
 				ACC6EC6E260DD9A800174E06 /* ProductItemsCollectionView.swift in Sources */,
 				ACB71E1F26109C9F00B8D0D0 /* SearchTextField.swift in Sources */,
 				AC6D15AD260E13B200052E18 /* SectionHeaderView.swift in Sources */,
+				AC5026FA26263739001651B3 /* HomeRouter.swift in Sources */,
 				AC9F417B260BE0D600EB8427 /* RoundItemCell.swift in Sources */,
 				ACC6EC6B260DD67600174E06 /* ProductItemCell.swift in Sources */,
 				AC51054D260AABED009FD540 /* SceneDelegate.swift in Sources */,
 				ACC6EC80260DEB3600174E06 /* RoundItemCellModel.swift in Sources */,
 				ACB71E232610A6A800B8D0D0 /* RoundedButton.swift in Sources */,
 				AC61D314260C895B001F2B48 /* UIColorEx.swift in Sources */,
-				AC51056B260AB038009FD540 /* HomeViewController.swift in Sources */,
+				AC51056B260AB038009FD540 /* HomePresenter.swift in Sources */,
 				ACC6EC71260DE3F600174E06 /* HomeCollectionView.swift in Sources */,
+				AC0C272A26262C5600A80B06 /* HomeView.swift in Sources */,
 				ACD05C4A260F4DAC007CAEB2 /* HeaderButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

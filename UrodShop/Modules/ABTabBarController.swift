@@ -28,17 +28,18 @@ final class ABTabBarController: UITabBarController {
     }
     
     private func configureViewControllers() {
-        let homeVC = HomeViewController()
+        let homeVC = HomePresenter()
+        let homeNavigationController = ABNavigationController(rootViewController: homeVC)
         let obzorSelectedImage = UIImage(named: "obzorSelected")!
         let obzorNotSelectedImage = UIImage(named: "obzorNotSelected")!
         let homeItem = UITabBarItem(title: nil, image: obzorNotSelectedImage, selectedImage: obzorSelectedImage)
-        homeVC.tabBarItem = homeItem
+        homeNavigationController.tabBarItem = homeItem
         
         let vc = UIViewController()
         vc.view.backgroundColor = .white
         let vcItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 1)
         vc.tabBarItem = vcItem
         
-        viewControllers = [homeVC, vc]
+        viewControllers = [homeNavigationController, vc]
     }
 }

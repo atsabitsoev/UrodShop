@@ -11,98 +11,8 @@ final class HomeCollectionView: UIView {
     
     private var dataSource: UICollectionViewDiffableDataSource<HomeSection, HomeItem>?
     
-    private let sections: [HomeSection] = [
-        HomeSection(
-            type: .categories,
-            title: "Категории",
-            items: [
-                HomeItem.category(RoundItemCellModel(icon: UIImage(named: "skeakers")!, description: "Футболки")),
-                HomeItem.category(RoundItemCellModel(icon: UIImage(named: "skeakers")!, description: "Носки")),
-                HomeItem.category(RoundItemCellModel(icon: UIImage(named: "skeakers")!, description: "Футболки")),
-                HomeItem.category(RoundItemCellModel(icon: UIImage(named: "skeakers")!, description: "Футболки")),
-                HomeItem.category(RoundItemCellModel(icon: UIImage(named: "skeakers")!, description: "Футболки")),
-                HomeItem.category(RoundItemCellModel(icon: UIImage(named: "skeakers")!, description: "Футболки")),
-                HomeItem.category(RoundItemCellModel(icon: UIImage(named: "skeakers")!, description: "Футболки"))
-            ]
-        ),
-        HomeSection(
-            type: .products,
-            title: "Популярное",
-            items: [
-                HomeItem.product(
-                    ProductItemCellModel(
-                        title: "Уродец Гена",
-                        subTitle: "Носки",
-                        accentText: "990₽",
-                        image: UIImage(named: "man")!
-                    )
-                ),
-                HomeItem.product(
-                    ProductItemCellModel(
-                        title: "Уродец Гена",
-                        subTitle: "Носки",
-                        accentText: "990₽",
-                        image: UIImage(named: "man")!
-                    )
-                ),HomeItem.product(
-                    ProductItemCellModel(
-                        title: "Уродец Гена",
-                        subTitle: "Носки",
-                        accentText: "990₽",
-                        image: UIImage(named: "man")!
-                    )
-                ),
-                HomeItem.product(
-                    ProductItemCellModel(
-                        title: "Уродец Гена",
-                        subTitle: "Носки",
-                        accentText: "990₽",
-                        image: UIImage(named: "man")!
-                    )
-                ),
-                HomeItem.product(
-                    ProductItemCellModel(
-                        title: "Уродец Гена",
-                        subTitle: "Носки",
-                        accentText: "990₽",
-                        image: UIImage(named: "man")!
-                    )
-                ),
-                HomeItem.product(
-                    ProductItemCellModel(
-                        title: "Уродец Гена",
-                        subTitle: "Носки",
-                        accentText: "990₽",
-                        image: UIImage(named: "man")!
-                    )
-                ),
-                HomeItem.product(
-                    ProductItemCellModel(
-                        title: "Уродец Гена",
-                        subTitle: "Носки",
-                        accentText: "990₽",
-                        image: UIImage(named: "man")!
-                    )
-                ),
-                HomeItem.product(
-                    ProductItemCellModel(
-                        title: "Уродец Гена",
-                        subTitle: "Носки",
-                        accentText: "990₽",
-                        image: UIImage(named: "man")!
-                    )
-                ),
-                HomeItem.product(
-                    ProductItemCellModel(
-                        title: "Уродец Гена",
-                        subTitle: "Носки",
-                        accentText: "990₽",
-                        image: UIImage(named: "man")!
-                    )
-                )
-            ]
-        )
-    ]
+    private var sections: [HomeSection] = []
+    private var headerActions: [Int: (title: String, action: () -> ())] = [:]
     
     private lazy var collectionView: UICollectionView = { [unowned self] in
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: createCompositionalLayout())
@@ -130,6 +40,16 @@ final class HomeCollectionView: UIView {
     override func updateConstraints() {
         setCollectionViewConstraints()
         super.updateConstraints()
+    }
+    
+    
+    func reloadCollectionView(sections: [HomeSection]) {
+        self.sections = sections
+        reloadData()
+    }
+    
+    func setHeaderInfo(_ info: (title: String, action: () -> ()), for index: Int) {
+        headerActions[index] = info
     }
     
     
@@ -184,6 +104,10 @@ final class HomeCollectionView: UIView {
             }
         )
         
+        setHeaderViews()
+    }
+    
+    private func setHeaderViews() {
         dataSource?.supplementaryViewProvider = { [unowned self] (collectionView, kind, indexPath) -> UICollectionReusableView? in
             guard kind == UICollectionView.elementKindSectionHeader else {
                 return nil
@@ -194,11 +118,11 @@ final class HomeCollectionView: UIView {
                     for: indexPath
             ) as? SectionHeaderReusableView else { return nil }
             guard let section = self.dataSource?.snapshot().sectionIdentifiers[indexPath.section] else { return nil }
+            
             view.setTitle(section.title)
-            if indexPath.section == 1 {
-                view.setButton(text: "Посмотреть все") {
-                    print("Тут идет переход на все популярные товары")
-                }
+            
+            if let headerInfo = headerActions[indexPath.section] {
+                view.setButton(text: headerInfo.title, action: headerInfo.action)
             }
             return view
         }
