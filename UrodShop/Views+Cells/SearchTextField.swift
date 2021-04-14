@@ -22,6 +22,11 @@ final class SearchTextField: UITextField {
         setCornerRadius()
     }
     
+    override func updateConstraints() {
+        heightAnchor.constraint(equalToConstant: Constants.NavigationBar.itemHeight).isActive = true
+        super.updateConstraints()
+    }
+    
     override public func textRect(forBounds bounds: CGRect) -> CGRect {
         return bounds.inset(by: textPadding)
     }
@@ -52,6 +57,7 @@ final class SearchTextField: UITextField {
     
     
     private func setupTextField() {
+        setNeedsUpdateConstraints()
         delegate = self
         placeholder = "Поиск"
         clearButtonMode = .whileEditing

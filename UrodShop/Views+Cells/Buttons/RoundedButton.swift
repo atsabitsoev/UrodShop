@@ -7,16 +7,11 @@
 
 import UIKit
 
-final class RoundedButton: UIButton {
+final class RoundedButton: SquaredButton {
+        
     
-    private let image: UIImage
-    private let height: CGFloat
-    
-    
-    init(image: UIImage, height: CGFloat = 44) {
-        self.image = image
-        self.height = height
-        super.init(frame: .zero)
+    override init(image: UIImage, height: CGFloat = Constants.NavigationBar.itemHeight) {
+        super.init(image: image, height: height)
         setupButton()
     }
     
@@ -29,17 +24,10 @@ final class RoundedButton: UIButton {
         setCornerRadius()
     }
     
-    override func updateConstraints() {
-        setButtonConstraints()
-        super.updateConstraints()
-    }
-    
     
     private func setupButton() {
-        setNeedsUpdateConstraints()
         backgroundColor = UIColor.accentColor
         tintColor = .white
-        setImage(image.withRenderingMode(.alwaysTemplate), for: .normal)
         layer.masksToBounds = true
     }
     
@@ -47,26 +35,4 @@ final class RoundedButton: UIButton {
         layer.cornerRadius = bounds.height / 2
     }
     
-    
-    override var isHighlighted: Bool {
-        didSet {
-            if isHighlighted {
-                alpha = 0.3
-            } else {
-                UIView.animate(withDuration: 0.3) {
-                    self.alpha = 1
-                }
-            }
-        }
-    }
-}
-
-
-extension RoundedButton {
-    private func setButtonConstraints() {
-        NSLayoutConstraint.activate([
-            heightAnchor.constraint(equalTo: widthAnchor),
-            heightAnchor.constraint(equalToConstant: height)
-        ])
-    }
 }

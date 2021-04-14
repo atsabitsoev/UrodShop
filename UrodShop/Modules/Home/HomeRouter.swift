@@ -11,8 +11,7 @@ import UIKit
 final class HomeRouter: HomeRouterProtocol {
     
     func showCatalog(from vc: UIViewController) {
-        let catalog = UIViewController()
-        catalog.view.backgroundColor = UIColor.white
+        let catalog = CatalogPresenter()
         vc.navigationController?.show(catalog, sender: nil)
     }
 }
