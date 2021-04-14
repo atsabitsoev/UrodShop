@@ -46,7 +46,12 @@ final class ABNavigationBar: UIStackView {
         for item in items {
             let view = item.getView(delegate: self)
             addArrangedSubview(view)
-            if item == .backItem {
+            if item == .backItem && items.contains(where: {
+                switch $0 {
+                case .title: return true
+                default: return false
+                }
+            }) {
                 setCustomSpacing(
                     Constants.NavigationBar.spacing + (Constants.NavigationBar.itemWidth - Constants.NavigationBar.backItemWidth),
                     after: view
