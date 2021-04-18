@@ -35,13 +35,13 @@ final class ABTabBarController: UITabBarController {
         let homeItem = UITabBarItem(title: nil, image: obzorNotSelectedImage, selectedImage: obzorSelectedImage)
         homeNavigationController.tabBarItem = homeItem
         
-        let vc = UIViewController()
-        vc.view.backgroundColor = .white
+        let cartVC = CartPresenter()
+        let cartNavigationController = ABNavigationController(rootViewController: cartVC)
         let cartNotSelectedImage = UIImage(named: "CartNotSelected")!
         let cartSelectedImage = UIImage(named: "CartSelected")!
-        let vcItem = UITabBarItem(title: nil, image: cartNotSelectedImage, selectedImage: cartSelectedImage)
-        vc.tabBarItem = vcItem
+        let cartItem = UITabBarItem(title: nil, image: cartNotSelectedImage, selectedImage: cartSelectedImage)
+        cartNavigationController.tabBarItem = cartItem
         
-        viewControllers = [homeNavigationController, vc]
+        viewControllers = [homeNavigationController, cartNavigationController]
     }
 }
