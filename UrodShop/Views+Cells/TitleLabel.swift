@@ -22,7 +22,7 @@ final class TitleLabel: UILabel {
     
     private func setupLabel() {
         setNeedsUpdateConstraints()
-        font = UIFont.boldSystemFont(ofSize: 16)
+        font = UIFont.boldSystemFont(ofSize: 20)
         textAlignment = .center
     }
 }

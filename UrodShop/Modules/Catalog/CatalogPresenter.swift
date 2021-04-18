@@ -25,3 +25,10 @@ extension CatalogPresenter: ABNavigationBarDelegate {
         router.dismiss(vc: self)
     }
 }
+
+
+extension CatalogPresenter: ABSegmentedControlDelegate {
+    func indexSelected(_ index: Int) {
+        print("Selected index: \(index)")
+    }
+}

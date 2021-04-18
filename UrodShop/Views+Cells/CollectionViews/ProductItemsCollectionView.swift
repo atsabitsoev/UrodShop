@@ -18,7 +18,6 @@ final class ProductItemsCollectionView: UIView {
             let image: UIImage
         }
         
-        let title: String
         let items: [Item]
     }
     
@@ -28,11 +27,13 @@ final class ProductItemsCollectionView: UIView {
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
+        layout.minimumLineSpacing = 24
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = UIColor.clear
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.register(ProductItemCell.self, forCellWithReuseIdentifier: ProductItemCell.identifier)
         collectionView.showsVerticalScrollIndicator = false
+        collectionView.contentInset = UIEdgeInsets(top: 32, left: 0, bottom: 0, right: 0)
         return collectionView
     }()
     private let verticalStack: UIStackView = {
@@ -63,7 +64,6 @@ final class ProductItemsCollectionView: UIView {
     
     private func setupView() {
         setNeedsUpdateConstraints()
-        collectionView.layer.masksToBounds = false
         setupVerticalStack()
         setupCollectionView()
     }
