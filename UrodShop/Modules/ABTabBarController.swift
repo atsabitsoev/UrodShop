@@ -37,7 +37,9 @@ final class ABTabBarController: UITabBarController {
         
         let vc = UIViewController()
         vc.view.backgroundColor = .white
-        let vcItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 1)
+        let cartNotSelectedImage = UIImage(named: "CartNotSelected")!
+        let cartSelectedImage = UIImage(named: "CartSelected")!
+        let vcItem = UITabBarItem(title: nil, image: cartNotSelectedImage, selectedImage: cartSelectedImage)
         vc.tabBarItem = vcItem
         
         viewControllers = [homeNavigationController, vc]
