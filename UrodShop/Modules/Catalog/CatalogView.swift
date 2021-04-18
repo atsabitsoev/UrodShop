@@ -12,7 +12,7 @@ final class CatalogView: UIView, CatalogViewProtocol {
     unowned private let presenter: CatalogPresenterProtocol & ABNavigationBarDelegate & ABSegmentedControlDelegate
     
     
-    private let navigationBar: ABNavigationBar = ABNavigationBar(items: [.backItem, .title("Все товары"), .empty])
+    private let navigationBar: ABNavigationBar = ABNavigationBar(items: [.backItem, .title("Все товары"), .searchItem])s
     private let segmentedControl: ABSegmentedControl = {
         $0.translatesAutoresizingMaskIntoConstraints = false
         return $0

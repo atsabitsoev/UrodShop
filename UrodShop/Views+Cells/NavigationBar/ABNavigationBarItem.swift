@@ -10,6 +10,7 @@ import UIKit
 enum ABNavigationBarItem: Equatable {
     case backItem
     case searchField
+    case searchItem
     case photoItem
     case title(String)
     case empty
@@ -27,6 +28,10 @@ extension ABNavigationBarItem {
         case .photoItem:
             let photoImage = UIImage(named: "photo")!
             let button = RoundedButton(image: photoImage)
+            return button
+        case .searchItem:
+            let searchImage = UIImage(named: "searchItem")!
+            let button = RoundedButton(image: searchImage)
             return button
         case .searchField:
             return SearchTextField()
