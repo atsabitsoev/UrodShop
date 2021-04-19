@@ -43,6 +43,7 @@ final class ABSegmentedControl: UIScrollView {
     
     private func setupView() {
         setNeedsUpdateConstraints()
+        translatesAutoresizingMaskIntoConstraints = false
         addSubview(stackView)
         showsHorizontalScrollIndicator = false
         clipsToBounds = false

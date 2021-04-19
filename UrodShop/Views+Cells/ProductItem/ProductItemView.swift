@@ -20,12 +20,7 @@ final class ProductItemView: UIView {
     
     private let viewModel: ViewModel
     
-    private let imageView: ProductImageView = {
-        let imageView = ProductImageView()
-        imageView.backgroundColor = UIColor.gray
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
-    }()
+    private let imageView: ProductImageView = ProductImageView()
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 16)
@@ -72,6 +67,7 @@ final class ProductItemView: UIView {
     
     private func setupView() {
         setNeedsUpdateConstraints()
+        translatesAutoresizingMaskIntoConstraints = false
         setupVerticalStack()
         setupImageView()
         setupTitleLabel()

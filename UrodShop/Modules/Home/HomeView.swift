@@ -13,10 +13,7 @@ final class HomeView: UIView, HomeViewProtocol {
     
     
     private let navigationBar: UIView = ABNavigationBar(items: [.searchField, .photoItem])
-    private let collectionView: HomeCollectionView = {
-        $0.translatesAutoresizingMaskIntoConstraints = false
-        return $0
-    }(HomeCollectionView())
+    private let collectionView: HomeCollectionView = HomeCollectionView()
     
     
     private let sections = [

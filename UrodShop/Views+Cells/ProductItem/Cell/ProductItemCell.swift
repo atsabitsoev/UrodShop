@@ -23,7 +23,6 @@ final class ProductItemCell: UICollectionViewCell {
                 image: cellModel.image
             )
         )
-        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     

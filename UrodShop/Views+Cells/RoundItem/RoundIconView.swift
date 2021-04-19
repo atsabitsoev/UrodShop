@@ -54,6 +54,7 @@ final class RoundIconView: UIView {
     
     private func setupView() {
         setNeedsUpdateConstraints()
+        translatesAutoresizingMaskIntoConstraints = false
         setupRoundView()
         setupIconImageView()
     }

@@ -19,7 +19,6 @@ final class RoundItemView: UIView {
     
     private let iconView: RoundIconView = {
         let view = RoundIconView()
-        view.translatesAutoresizingMaskIntoConstraints = false
         view.setContentCompressionResistancePriority(.defaultHigh, for: .vertical)
         return view
     }()
@@ -59,6 +58,7 @@ final class RoundItemView: UIView {
     
     private func setupView() {
         setNeedsUpdateConstraints()
+        translatesAutoresizingMaskIntoConstraints = false
         setupVerticalStack()
         setupIconView()
         setupDescriptionLabel()

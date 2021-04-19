@@ -48,6 +48,7 @@
 		ACC6EC78260DEA2600174E06 /* HomeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC6EC77260DEA2600174E06 /* HomeItem.swift */; };
 		ACC6EC7C260DEB0700174E06 /* ProductItemCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC6EC7B260DEB0700174E06 /* ProductItemCellModel.swift */; };
 		ACC6EC80260DEB3600174E06 /* RoundItemCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC6EC7F260DEB3600174E06 /* RoundItemCellModel.swift */; };
+		ACCEF198262D7C490006B02F /* PaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCEF197262D7C490006B02F /* PaymentView.swift */; };
 		ACD01F5C260BD899009A17CE /* RoundItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD01F5B260BD899009A17CE /* RoundItemView.swift */; };
 		ACD05C4A260F4DAC007CAEB2 /* HeaderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD05C49260F4DAC007CAEB2 /* HeaderButton.swift */; };
 		ACF6ED8B262C6A0C00C8825A /* ABSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF6ED8A262C6A0C00C8825A /* ABSegmentedControl.swift */; };
@@ -99,6 +100,7 @@
 		ACC6EC77260DEA2600174E06 /* HomeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeItem.swift; sourceTree = "<group>"; };
 		ACC6EC7B260DEB0700174E06 /* ProductItemCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductItemCellModel.swift; sourceTree = "<group>"; };
 		ACC6EC7F260DEB3600174E06 /* RoundItemCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundItemCellModel.swift; sourceTree = "<group>"; };
+		ACCEF197262D7C490006B02F /* PaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
 		ACD01F5B260BD899009A17CE /* RoundItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundItemView.swift; sourceTree = "<group>"; };
 		ACD05C49260F4DAC007CAEB2 /* HeaderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderButton.swift; sourceTree = "<group>"; };
 		ACF6ED8A262C6A0C00C8825A /* ABSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABSegmentedControl.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 				AC6D15AC260E13B200052E18 /* SectionHeaderView.swift */,
 				ACB71E1E26109C9F00B8D0D0 /* SearchTextField.swift */,
 				ACA3BCFD262651E900CB815C /* TitleLabel.swift */,
+				ACCEF197262D7C490006B02F /* PaymentView.swift */,
 				AC5056CB2626485F004E5F1C /* NavigationBar */,
 				AC9F417D260BE5C400EB8427 /* CollectionViews */,
 				AC9F4179260BE0BD00EB8427 /* RoundItem */,
@@ -412,6 +415,7 @@
 				AC9BF71E262CB76C00FB6A0D /* CartProtocol.swift in Sources */,
 				AC51054D260AABED009FD540 /* SceneDelegate.swift in Sources */,
 				AC5056C926264723004E5F1C /* ABNavigationBar.swift in Sources */,
+				ACCEF198262D7C490006B02F /* PaymentView.swift in Sources */,
 				ACC6EC80260DEB3600174E06 /* RoundItemCellModel.swift in Sources */,
 				ACB71E232610A6A800B8D0D0 /* RoundedButton.swift in Sources */,
 				ACA3BD0426265E6500CB815C /* Constants.swift in Sources */,

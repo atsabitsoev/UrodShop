@@ -13,10 +13,10 @@ final class CatalogView: UIView, CatalogViewProtocol {
     
     
     private let navigationBar: ABNavigationBar = ABNavigationBar(items: [.backItem, .title("Все товары"), .searchItem])
-    private let segmentedControl: ABSegmentedControl = {
-        $0.translatesAutoresizingMaskIntoConstraints = false
-        return $0
-    }(ABSegmentedControl(items: ["Футболки", "Брюки", "Носки", "Обувь", "Детские товары", "Аксессуары"], selectedIndex: 0))
+    private let segmentedControl: ABSegmentedControl = ABSegmentedControl(
+        items: ["Футболки", "Брюки", "Носки", "Обувь", "Детские товары", "Аксессуары"],
+        selectedIndex: 0
+    )
     private let collectionView: UIView = {
         $0.translatesAutoresizingMaskIntoConstraints = false
         return $0

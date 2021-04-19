@@ -55,6 +55,7 @@ final class HomeCollectionView: UIView {
     
     private func setupView() {
         setNeedsUpdateConstraints()
+        translatesAutoresizingMaskIntoConstraints = false
         setupCollectionView()
     }
     

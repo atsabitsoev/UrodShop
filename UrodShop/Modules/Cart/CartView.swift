@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PassKit
 
 final class CartView: UIView, CartViewProtocol {
     
@@ -16,15 +17,7 @@ final class CartView: UIView, CartViewProtocol {
         $0.translatesAutoresizingMaskIntoConstraints = false
         return $0
     }(UIView())
-    private let paymentView: UIView = {
-        $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.layer.shadowOffset = CGSize(width: 0, height: 0)
-        $0.layer.shadowRadius = 8
-        $0.layer.shadowColor = UIColor.black.cgColor
-        $0.layer.shadowOpacity = 0.1
-        $0.backgroundColor = UIColor.red
-        return $0
-    }(UIView())
+    private let paymentView: PaymentView = PaymentView()
     
     
     init(presenter: CartPresenterProtocol) {
@@ -50,6 +43,7 @@ final class CartView: UIView, CartViewProtocol {
         
         addSubview(tableView)
         addSubview(paymentView)
+        paymentView.setCost("990₽")
     }
 }
 
@@ -69,7 +63,8 @@ extension CartView {
             paymentView.bottomAnchor.constraint(equalTo: bottomAnchor),
             paymentView.leadingAnchor.constraint(equalTo: leadingAnchor),
             paymentView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            paymentView.heightAnchor.constraint(equalToConstant: 50)
+            paymentView.heightAnchor.constraint(equalToConstant: 60)
         ])
     }
+    
 }

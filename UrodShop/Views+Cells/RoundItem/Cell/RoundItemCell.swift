@@ -21,7 +21,6 @@ final class RoundItemCell: UICollectionViewCell {
                 description: cellModel.description
             )
         )
-        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
