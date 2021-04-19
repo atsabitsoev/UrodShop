@@ -13,12 +13,12 @@ final class ProductItemView: UIView {
     struct ViewModel {
         let title: String
         let subTitle: String
-        let accentText: String
+        let accentText: String?
         let image: UIImage
     }
     
     
-    private let viewModel: ViewModel
+    private var viewModel: ViewModel
     
     private let imageView: ProductImageView = ProductImageView()
     private let titleLabel: UILabel = {
@@ -65,14 +65,20 @@ final class ProductItemView: UIView {
     }
     
     
-    private func setupView() {
-        setNeedsUpdateConstraints()
-        translatesAutoresizingMaskIntoConstraints = false
-        setupVerticalStack()
+    func setViewModel(_ viewModel: ViewModel) {
+        self.viewModel = viewModel
         setupImageView()
         setupTitleLabel()
         setupSubTitleLabel()
         setupAccentLabel()
+    }
+    
+    
+    private func setupView() {
+        setNeedsUpdateConstraints()
+        translatesAutoresizingMaskIntoConstraints = false
+        setupVerticalStack()
+        setViewModel(viewModel)
     }
     
     private func setupVerticalStack() {
@@ -80,7 +86,9 @@ final class ProductItemView: UIView {
         verticalStack.addArrangedSubview(imageView)
         verticalStack.addArrangedSubview(titleLabel)
         verticalStack.addArrangedSubview(subTitleLabel)
-        verticalStack.addArrangedSubview(accentLabel)
+        if viewModel.accentText != nil {
+            verticalStack.addArrangedSubview(accentLabel)
+        }
         verticalStack.setCustomSpacing(8, after: imageView)
         verticalStack.setCustomSpacing(8, after: subTitleLabel)
     }
@@ -98,16 +106,19 @@ final class ProductItemView: UIView {
     }
     
     private func setupAccentLabel() {
-        accentLabel.text = viewModel.accentText
+        if let accentText = viewModel.accentText {
+            accentLabel.text = accentText
+        }
     }
 }
 
 
 extension ProductItemView {
     private func setImageViewConstraints() {
+        let stackViewHeight: CGFloat = viewModel.accentText == nil ? 50 : 77
         NSLayoutConstraint.activate([
             imageView.widthAnchor.constraint(equalTo: verticalStack.widthAnchor),
-            imageView.heightAnchor.constraint(equalTo: heightAnchor, constant: -77)
+            imageView.heightAnchor.constraint(equalTo: heightAnchor, constant: -stackViewHeight)
         ])
     }
     

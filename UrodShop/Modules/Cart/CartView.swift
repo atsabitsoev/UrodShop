@@ -15,9 +15,61 @@ final class CartView: UIView, CartViewProtocol {
     
     private let tableView: UIView = {
         $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.setItems([
+            CartTableView.Item(
+                image: UIImage(named: "man")!,
+                count: 2,
+                title: "Уродец Гена",
+                subTitle: "Носки",
+                cost: "990₽"
+            ),
+            CartTableView.Item(
+                image: UIImage(named: "man")!,
+                count: 1,
+                title: "Уродец Гена",
+                subTitle: "Носки",
+                cost: "990₽"
+            ),
+            CartTableView.Item(
+                image: UIImage(named: "man")!,
+                count: 1,
+                title: "Уродец Гена",
+                subTitle: "Носки",
+                cost: "990₽"
+            ),
+            CartTableView.Item(
+                image: UIImage(named: "man")!,
+                count: 1,
+                title: "Уродец Гена",
+                subTitle: "Носки",
+                cost: "990₽"
+            ),
+            CartTableView.Item(
+                image: UIImage(named: "man")!,
+                count: 1,
+                title: "Уродец Гена",
+                subTitle: "Носки",
+                cost: "990₽"
+            ),
+            CartTableView.Item(
+                image: UIImage(named: "man")!,
+                count: 1,
+                title: "Уродец Гена",
+                subTitle: "Носки",
+                cost: "990₽"
+            ),
+            CartTableView.Item(
+                image: UIImage(named: "obzorNotSelected")!,
+                count: 1,
+                title: "Уродец Гена",
+                subTitle: "Носки",
+                cost: "990₽"
+            )
+        ])
         return $0
-    }(UIView())
+    }(CartTableView())
     private let paymentView: PaymentView = PaymentView()
+    private let navigationBar: ABNavigationBar = ABNavigationBar(items: [.title("Корзина")])
     
     
     init(presenter: CartPresenterProtocol) {
@@ -41,6 +93,7 @@ final class CartView: UIView, CartViewProtocol {
         setNeedsUpdateConstraints()
         backgroundColor = UIColor.white
         
+        addSubview(navigationBar)
         addSubview(tableView)
         addSubview(paymentView)
         paymentView.setCost("990₽")
@@ -51,7 +104,7 @@ final class CartView: UIView, CartViewProtocol {
 extension CartView {
     private func setTableViewConstraints() {
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: topAnchor),
+            tableView.topAnchor.constraint(equalTo: navigationBar.bottomAnchor, constant: 8),
             tableView.bottomAnchor.constraint(equalTo: paymentView.topAnchor),
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor)
